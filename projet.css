@@ -1,0 +1,111 @@
+body {
+    background-color: #EBF4F6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #306f77;
+    color: #EBF4F6;
+    text-align: center;
+    margin: 0;
+}
+
+nav {
+    background-color: #e0ebf5;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type: none; /* Supprime les puces */
+    margin: 0 auto; /* Centre horizontalement */
+    padding: 0; /* Supprime le padding */
+    display: flex; /* Active l'affichage flexible */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+}
+
+nav ul li {
+    margin: 0 10px; /* Ajoute de l'espacement entre les éléments */
+}
+
+nav ul li a img {
+    display: block; /* S'assure que les images sont traitées comme des blocs */
+    margin: 0 auto; /* Centre les images dans chaque lien */
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+nav ul li a img {
+    display: block; /* S'assure que les images sont traitées comme des blocs */
+    margin: 0 auto; /* Centre les images dans chaque lien */
+}
+
+.logo-header {
+    display: flex; /* Active le modèle de boîte flexible */
+    align-items: center; /* Aligne verticalement le texte et l'image */
+    justify-content: center;
+    gap: 10px; /* Ajoute un espace entre le texte et l'image */
+
+}
+
+.logo-header img {
+    height: 80px; /* Contrôle la hauteur de l'image */
+    width: auto; /* Garde les proportions de l'image */
+    display: inline-block; /* Assure que l'image s'aligne correctement */
+}
+
+.container {
+    padding: 20px;
+}
+
+.carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contact-info {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
