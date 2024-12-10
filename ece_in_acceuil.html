@@ -4,12 +4,43 @@
 		<meta charset="UTF-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <title>ECE In</title>
-	    <link rel="stylesheet" href="primes.css" type = "text/css" />
+	    <link rel="stylesheet" href="projet.css" type = "text/css" />
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const imagesContainer = document.querySelector(".carousel-images");
+        const images = document.querySelectorAll(".carousel-images img");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+        let currentIndex = 0;
+
+        // Function to update the carousel position
+        function updateCarousel() {
+            const offset = -currentIndex * 100; // Calculate offset based on index
+            imagesContainer.style.transform = `translateX(${offset}%)`; // Move the carousel
+        }
+
+        // Next button event
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+            updateCarousel();
+        });
+
+        // Previous button event
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop back to the last image
+            updateCarousel();
+        });
+    });
+</script>
+
+
 </head>
 <body>
-	<wrapper>
+	<div class ="wrapper">
 		<header>
-			<h1>ECE In: Social Media Professionnel de l'ECE Paris 
+			<h1 class = "logo-header">
+				ECE In: Social Media Professionnel de l'ECE Paris 
 				<img src ="logo.png" alt ="Logo d'ECE In"height ="80" width = "200"/>
 			</h1>
         	<nav>
@@ -28,24 +59,51 @@
 		<main>
 			<section id ="intro">
 				<h2>À propos de nous</h2>
-				<p>Bienvenue à ECE In, la platforme de réseau social professionnel pour la communauté ECE Paris. Le but de ECE In est de connecter les étuditnats, enseignants, et alumni avec des partenanires pour votre projet professionnels ou personnels. Il s'adresse à tout ceux qui veulent  prendre leur vie professionnelle au sérieux, trouver de nouvelles opportunités, développer leur carrière et se connecter avec d'autres personnes pour des buts professionnels.</p>
-				<p>Ce site est votre accès privilégié au monde professionnel et des affaires. Vous aurez non seulement l’opportunité de rencontrer d’autres professionnels en personne, mais aussi de partager un aperçu de votre parcours professionnel et d’échanger vos cartes de visite. </p>
-
+				<p>
+					Bienvenue à ECE In, la platforme de réseau social professionnel pour la communauté ECE Paris. Le but de ECE In est de connecter les étuditnats, enseignants, et alumni avec des partenanires pour votre projet professionnels ou personnels. Il s'adresse à tout ceux qui veulent  prendre leur vie professionnelle au sérieux, trouver de nouvelles opportunités, développer leur carrière et se connecter avec d'autres personnes pour des buts professionnels.
+				</p>
+				<p>
+					Ce site est votre accès privilégié au monde professionnel et des affaires. Vous aurez non seulement l’opportunité de rencontrer d’autres professionnels en personne, mais aussi de partager un aperçu de votre parcours professionnel et d’échanger vos cartes de visite.
+				</p>
 			</section>
 
 			<section id = "evenement">
-				<h3>Evènement de la semaine</h3>
+				<h3>
+					Evènement de la semaine
+				</h3>
+				<p>
+					🌍✨ Jeudi soir, au Campus de l'ECE a eu lieu la Soirée Erasmus+ Day ! 🎉 Nos étudiants ingénieurs ont eu l'opportunité de rencontrer des étudiants internationaux venus des quatre coins du monde.
+				</p>
+				<p>
+					🤝 Ce fut un moment d'échanges enrichissants, où chacun a pu partager ses expériences et obtenir des conseils précieux sur les programmes d'échanges internationaux. Les discussions ont été passionnantes et ont ouvert des horizons nouveaux pour nos futurs ingénieurs !
+
+				</p>
+				<p>
+					🎊 En plus des échanges, la soirée a été rythmée par des activités ludiques et conviviales ! Un photobooth a permis de capturer des moments mémorables, une dégustation culinaire a fait voyager nos papilles à travers le monde, et le karaoké a mis tout le monde dans l'ambiance.
+				</p>
+				<p>
+					Un grand merci à tous les participants pour leur enthousiasme et leur volonté d'apprendre les uns des autres. 🌐❤️
+				</p>
 				<div class="carousel">
-                <div class="carousel_img">
-                    <img src="event1.jpg" alt="Event 1">
-                    <img src="event2.jpg" alt="Event 2">
-                    <img src="event3.jpg" alt="Event 3">
-                </div>
-                <div class="carousel-controls">
-                    <button id="prev">&laquo; Précédent</button>
-                    <button id="next">Suivant &raquo;</button>
-                </div>
-            </div>
+	                <div class="carousel-images">
+	                  	<img src="event1.png" alt="Photo1" width="600" 
+		            	height="300">
+	                    <img src="event2.png" alt="Photo2" width="600" 
+		            	height="300">
+	                    <img src="event3.png" alt="Photo3" width="600" 
+		            	height="300">
+	                    <img src="event4.png" alt="Photo4" width="600" 
+		            	height="300">
+	                    <img src="event5.png" alt="Photo5" width="600" 
+		            	height="300">
+	                    <img src="event6.png" alt="Photo6" width="600" 
+		            	height="300">
+	                </div>
+	                <div class="carousel-controls">
+	                    <button id="prev" aria-label="Précédent">&laquo; Précédent</button>
+	                    <button id="next" aria-label="Suivant">Suivant &raquo;</button>
+	                </div>
+            	</div>
 			</section>
 
 			<section class = "contact_id">
@@ -53,7 +111,15 @@
 				<p>Téléphone : +33 01 44 39 06 00  <br></p>
 				<p>Adresse : 10, Rue Sextius Michel, 75015 Paris </p>
 				<div id="map">
-	            	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5250.732586425122!2d2.2885659!3d48.851225199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20-%20Ecole%20d&#39;ing%C3%A9nieurs%20-%20Campus%20de%20Paris!5e0!3m2!1sfr!2sfr!4v1733782099164!5m2!1sfr!2sfr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+	            	<iframe 
+		            	src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5250.732586425122!2d2.2885659!3d48.851225199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20-%20Ecole%20d&#39;ing%C3%A9nieurs%20-%20Campus%20de%20Paris!5e0!3m2!1sfr!2sfr!4v1733782099164!5m2!1sfr!2sfr" 
+		            	width="400" 
+		            	height="250" 
+		            	style="border:0;" 
+		            	allowfullscreen="" 
+		            	loading="lazy" 
+		            	referrerpolicy="no-referrer-when-downgrade">
+	            	</iframe>`
 	            </div>
 			</section>
 		</main>
@@ -61,6 +127,6 @@
 		<footer>
 			 <p>&copy; 2024 ECE In. Tous droits réservés.</p>
 		</footer>	
-	</wrapper>
+	</div>
 </body>
 </html>
