@@ -6,32 +6,121 @@
 	    <title>ECE In</title>
 	    <link rel="stylesheet" href="projet.css" type = "text/css" />
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const imagesContainer = document.querySelector(".carousel-images");
-        const images = document.querySelectorAll(".carousel-images img");
-        const prevButton = document.getElementById("prev");
-        const nextButton = document.getElementById("next");
-        let currentIndex = 0;
+<script>   
+	document.addEventListener("DOMContentLoaded", () => {
+	    const uploadForm = document.getElementById("upload-form");
+	    const uploadPreview = document.getElementById("upload-preview");
 
-        // Function to update the carousel position
-        function updateCarousel() {
-            const offset = -currentIndex * 100; // Calculate offset based on index
-            imagesContainer.style.transform = `translateX(${offset}%)`; // Move the carousel
-        }
+	    uploadForm.addEventListener("submit", (event) => {
+	        event.preventDefault(); // Empêche le rechargement de la page
 
-        // Next button event
-        nextButton.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
-            updateCarousel();
-        });
+	        // Récupère les données du formulaire
+	        const contentType = document.getElementById("content-type").value;
+	        const fileInput = document.getElementById("file-upload");
+	        const description = document.getElementById("description").value;
 
-        // Previous button event
-        prevButton.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop back to the last image
-            updateCarousel();
-        });
-    });
+	        if (fileInput.files.length === 0) {
+	            alert("Veuillez sélectionner un fichier avant de publier.");
+	            return;
+	        }
+
+	        const file = fileInput.files[0];
+	        const reader = new FileReader();
+
+	        // Prévisualise le contenu
+	        reader.onload = () => {
+	            const contentDiv = document.createElement("div");
+	            contentDiv.className = "uploaded-content";
+
+	            let contentHTML = `<p><strong>Description :</strong> ${description}</p>`;
+	            if (contentType === "photo") {
+	                contentHTML += `<img src="${reader.result}" alt="Photo publiée" />`;
+	            } else if (contentType === "video") {
+	                contentHTML += `<video controls>
+	                                    <source src="${reader.result}" type="${file.type}">
+	                                    Votre navigateur ne supporte pas la vidéo.
+	                                </video>`;
+	            } else if (contentType === "cv") {
+	                contentHTML += `<p><a href="${reader.result}" download="CV.pdf">Télécharger le CV</a></p>`;
+	            }
+
+	            contentDiv.innerHTML = contentHTML;
+	            uploadPreview.appendChild(contentDiv);
+	        };
+
+	        reader.readAsDataURL(file); // Convertit le fichier en URL Data pour prévisualisation
+	    });
+	});
+
+	document.addEventListener("DOMContentLoaded", () => {
+	    // Gestion du formulaire de contenu
+	    const uploadForm = document.getElementById("upload-form");
+	    const uploadPreview = document.getElementById("upload-preview");
+
+	    uploadForm.addEventListener("submit", (event) => {
+	        event.preventDefault(); // Empêche le rechargement de la page
+
+	        const contentType = document.getElementById("content-type").value;
+	        const fileInput = document.getElementById("file-upload");
+	        const description = document.getElementById("description").value;
+
+	        if (fileInput.files.length === 0) {
+	            alert("Veuillez sélectionner un fichier avant de publier.");
+	            return;
+	        }
+
+	        const file = fileInput.files[0];
+	        const reader = new FileReader();
+
+	        reader.onload = () => {
+	            const contentDiv = document.createElement("div");
+	            contentDiv.className = "uploaded-content";
+
+	            let contentHTML = `<p><strong>Description :</strong> ${description}</p>`;
+	            if (contentType === "photo") {
+	                contentHTML += `<img src="${reader.result}" alt="Photo publiée" />`;
+	            } else if (contentType === "video") {
+	                contentHTML += `<video controls>
+	                                    <source src="${reader.result}" type="${file.type}">
+	                                    Votre navigateur ne supporte pas la vidéo.
+	                                </video>`;
+	            }
+
+	            contentDiv.innerHTML = contentHTML;
+	            uploadPreview.appendChild(contentDiv);
+	        };
+
+	        reader.readAsDataURL(file); // Convertit le fichier en URL Data pour prévisualisation
+	    });
+
+	    // Gestion du formulaire de CV
+	    const cvForm = document.getElementById("cv-form");
+	    const cvPreview = document.createElement("div");
+	    document.getElementById("upload-cv").appendChild(cvPreview);
+
+	    cvForm.addEventListener("submit", (event) => {
+	        event.preventDefault(); // Empêche le rechargement de la page
+
+	        const cvFile = document.getElementById("cv-upload").files[0];
+	        const cvDescription = document.getElementById("cv-description").value;
+
+	        if (!cvFile) {
+	            alert("Veuillez sélectionner un fichier CV avant de publier.");
+	            return;
+	        }
+
+	        const cvLink = document.createElement("a");
+	        cvLink.href = URL.createObjectURL(cvFile);
+	        cvLink.download = cvFile.name;
+	        cvLink.textContent = `Télécharger le CV : ${cvFile.name}`;
+
+	        cvPreview.innerHTML = `
+	            <p><strong>Description :</strong> ${cvDescription}</p>
+	        `;
+	        cvPreview.appendChild(cvLink);
+	    });
+	});
+
 </script>
 
 
@@ -86,18 +175,12 @@
 				</p>
 				<div class="carousel">
 	                <div class="carousel-images">
-	                  	<img src="event1.png" alt="Photo1" width="600" 
-		            	height="300">
-	                    <img src="event2.png" alt="Photo2" width="600" 
-		            	height="300">
-	                    <img src="event3.png" alt="Photo3" width="600" 
-		            	height="300">
-	                    <img src="event4.png" alt="Photo4" width="600" 
-		            	height="300">
-	                    <img src="event5.png" alt="Photo5" width="600" 
-		            	height="300">
-	                    <img src="event6.png" alt="Photo6" width="600" 
-		            	height="300">
+	                  	<img src="event1.png" alt="Photo1" width="600" height="300">
+	                    <img src="event2.png" alt="Photo2" width="600" height="300">
+	                    <img src="event3.png" alt="Photo3" width="600" height="300">
+	                    <img src="event4.png" alt="Photo4" width="600" height="300">
+	                    <img src="event5.png" alt="Photo5" width="600" height="300">
+	                    <img src="event6.png" alt="Photo6" width="600" height="300">
 	                </div>
 	                <div class="carousel-controls">
 	                    <button id="prev" aria-label="Précédent">&laquo; Précédent</button>
@@ -106,7 +189,52 @@
             	</div>
 			</section>
 
+			<section id="user-events">
+			    <h3>Vos événements et ceux de votre réseau</h3>
+			    <div id="event-list">
+			        <!-- Les événements seront générés ici via JavaScript -->
+			    </div>
+			</section>
+
+			<section id="upload-section">
+			    <h3>Partagez avec nous votre meilleur moment!</h3>
+			   <form id="upload-form">
+			        <label for="content-type">Vous voulez partager un photo ou un video?</label>
+			        <select id="content-type" name="content-type">
+			            <option value="photo">Photo</option>
+			            <option value="video">Vidéo</option>
+			        </select> 
+
+			        <label for="file-upload">Choisissez un fichier :</label>
+			        <input type="file" id="file-upload" name="file-upload" accept="image/*,video/*" required />
+
+			        <label for="description">Description :</label>
+			        <textarea id="description" name="description" placeholder="Ajoutez une description..." required></textarea>
+
+			        <button type="submit">Publier</button>
+			    </form>
+
+			    <div id="upload-preview">
+			        <!-- Les contenus publiés apparaîtront ici -->
+			    </div>
+			</section>
+
+		    <section id="upload-cv">
+		        <h3>Vous cherchez un emploi, un stage ou de l'apprentissage dans l'entreprise? Publier votre CV!</h3>
+		        <form id="cv-form">
+		            <label for="cv-upload">Choisissez votre CV :</label>
+		            <input type="file" id="cv-upload" name="cv-upload" accept=".pdf" required />
+
+		            <label for="cv-description">Ajoutez une description :</label>
+		            <textarea id="cv-description" name="cv-description" placeholder="Parlez un peu de votre parcours..." required></textarea>
+
+		            <button type="submit">Publier votre CV</button>
+		        </form>
+		    </section>
+
+
 			<section class = "contact_id">
+				<h3>Contactez-nous</h3>
 				<p>Contact : <a href="admissions-paris@ece.fr"> admissions-paris@ece.fr</a><br></p>
 				<p>Téléphone : +33 01 44 39 06 00  <br></p>
 				<p>Adresse : 10, Rue Sextius Michel, 75015 Paris </p>
