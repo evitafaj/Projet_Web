@@ -162,3 +162,151 @@ footer {
         height: auto;
     }
 }
+
+#upload-section {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#upload-form label {
+    font-weight: bold;
+}
+
+#upload-form input, #upload-form select, #upload-form textarea, #upload-form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#upload-form button {
+    background-color: #306f77;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#upload-form button:hover {
+    background-color: #245a5f;
+}
+
+#upload-preview {
+    margin-top: 20px;
+}
+
+.uploaded-content {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.uploaded-content img, .uploaded-content video {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+ 
+
+#user-events {
+    padding: 20px;
+    background-color: #f4f9fc;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+#event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.event-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-item h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #306f77;
+}
+
+.event-item small {
+    color: #666;
+    font-style: italic;
+}
+
+.event-item p {
+    margin: 5px 0 0;
+}
+
+
+/* Conteneur principal pour les deux sections */
+.content-container {
+    display: flex; /* Utilise Flexbox pour disposer les éléments côte à côte */
+    gap: 20px; /* Espace entre les sections */
+    margin-top: 20px;
+}
+
+/* Sections individuelles */
+#upload-section, #upload-cv {
+    flex: 1; /* Les sections prennent des tailles égales */
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les formulaires */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacement entre les éléments du formulaire */
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form select, form textarea, form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #306f77;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #245a5f;
+}
+
+/* Zone d'aperçu */
+#upload-preview, #cv-preview {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
