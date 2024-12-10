@@ -1,68 +1,77 @@
+/* Body */
 body {
     background-color: #EBF4F6;
     margin: 0;
     padding: 0;
 }
 
+/* Header */
 header {
     background-color: #306f77;
     color: #EBF4F6;
     text-align: center;
     margin: 0;
+    padding: 20px 10px; /* Add padding for better spacing */
+    box-sizing: border-box;
 }
 
+/* Navigation */
 nav {
     background-color: #e0ebf5;
     overflow: hidden;
     margin: 0;
-    padding: 0;
+    padding: 10px 0; /* Add vertical padding */
 }
 
 nav ul {
-    list-style-type: none; /* Supprime les puces */
-    margin: 0 auto; /* Centre horizontalement */
-    padding: 0; /* Supprime le padding */
-    display: flex; /* Active l'affichage flexible */
-    justify-content: center; /* Centre les éléments horizontalement */
-    align-items: center; /* Centre les éléments verticalement */
+    list-style-type: none; /* Remove default list style */
+    margin: 0 auto; /* Center horizontally */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
 }
 
 nav ul li {
-    margin: 0 10px; /* Ajoute de l'espacement entre les éléments */
+    margin: 0 10px; /* Add spacing between nav items */
 }
 
 nav ul li a img {
-    display: block; /* S'assure que les images sont traitées comme des blocs */
-    margin: 0 auto; /* Centre les images dans chaque lien */
+    display: block; /* Ensure images are block-level elements */
+    margin: 0 auto; /* Center the images inside links */
+    height: 50px; /* Control image size */
+    width: auto; /* Maintain proportions */
 }
 
 nav ul li a:hover {
     background-color: #575757;
+    border-radius: 5px; /* Add subtle rounding for hover effect */
 }
 
-nav ul li a img {
-    display: block; /* S'assure que les images sont traitées comme des blocs */
-    margin: 0 auto; /* Centre les images dans chaque lien */
-}
-
+/* Logo Header */
 .logo-header {
-    display: flex; /* Active le modèle de boîte flexible */
-    align-items: center; /* Aligne verticalement le texte et l'image */
-    justify-content: center;
-    gap: 10px; /* Ajoute un espace entre le texte et l'image */
-
+    display: flex; /* Enable Flexbox */
+    align-items: center; /* Vertically align text and image */
+    justify-content: center; /* Center text and logo */
+    gap: 10px; /* Add spacing between text and logo */
+    text-align: center;
+    padding-bottom: 20px; /* Add spacing below header content */
 }
 
 .logo-header img {
-    height: 80px; /* Contrôle la hauteur de l'image */
-    width: auto; /* Garde les proportions de l'image */
-    display: inline-block; /* Assure que l'image s'aligne correctement */
+    height: 80px; /* Set logo size */
+    width: auto; /* Maintain proportions */
+    display: inline-block; /* Ensure proper alignment */
 }
 
+/* Main Container */
 .container {
     padding: 20px;
+    max-width: 1200px; /* Limit the maximum width of the content */
+    margin: 0 auto; /* Center the container on the page */
 }
 
+/* Carousel */
 .carousel {
     width: 100%;
     position: relative;
@@ -71,41 +80,85 @@ nav ul li a img {
 }
 
 .carousel-images {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+    display: flex; /* Arrange images in a row */
+    transition: transform 0.5s ease-in-out; /* Smooth animation */
 }
 
 .carousel-images img {
-    width: 100%;
+    width: 100%; /* Full width for each image */
+    object-fit: cover; /* Ensure images fill their container */
 }
 
 .carousel-controls {
     position: absolute;
-    top: 50%;
+    top: 50%; /* Center controls vertically */
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Position buttons on each side */
     transform: translateY(-50%);
 }
 
 .carousel-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
     padding: 10px;
-    cursor: pointer;
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Round edges */
 }
 
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+
+/* Contact Info Section */
 .contact-info {
     background-color: #f8f9fa;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 5px; /* Add rounded corners */
+    text-align: center;
 }
 
+.contact-info p {
+    margin: 10px 0;
+    font-size: 1rem; /* Adjust font size */
+}
+
+.contact-info a {
+    color: #306f77;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add spacing between stacked items */
+    }
+
+    .logo-header {
+        flex-direction: column; /* Stack logo and text vertically */
+        gap: 5px;
+    }
+
+    .carousel-images img {
+        width: 100%; /* Ensure images fit smaller screens */
+        height: auto;
+    }
 }
