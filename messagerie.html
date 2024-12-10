@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang = "fr">
-	<head>
-		<meta charset="UTF-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>ECE In</title>
-	    <link rel="stylesheet" href="primes.css" type = "text/css" />
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie</title>
+    <link rel="stylesheet" href="projet.css">
 </head>
 <body>
-	<wrapper>
-		<header>
-			<h1>ECE In: Social Media Professionnel de l'ECE Paris <img src ="logo.png" alt ="Logo d'ECE In"height ="80" width = "200"/></h1>
-        	<nav>
-        		<a href="ece_in_acceuil.html"><img  src = "acceuil.png" alt = "Acceuil" height ="50" width = "100"></a>
-        		<a href="reseau.html"><img  src = "mon_reseau.png" alt = "Reseau" height ="50" width = "100"></a>
-        		<a href="profil.html"><img  src = "vous.png" alt = "Vous" height ="50" width = "100"></a>
-        		<a href="notifications.html"><img  src = "notifications.png" alt = "Notifications" height ="50" width = "100"></a>
-        		<a href="messagerie.html"><img  src = "messagerie.png" alt = "Messagerie" height ="50" width = "100"></a>
-        		<a href="emplois.html"><img  src = "emplois.png" alt = "Emplois" height ="50" width = "100"></a>
-        	</nav>
-		</header>
+    <header>
+        <h1>Messagerie</h1>
+        <p>Choisissez un contact et communiquez avec vos amis en ligne.</p>
+    </header>
 
+    <main>
+        <aside id="contacts">
+            <h2>Contacts</h2>
+            <ul id="contact-list">
+                <!-- La liste des contacts sera ajoutée dynamiquement -->
+            </ul>
+        </aside>
 
-		<main>
-			<section id ="intro">
-				<h2>À propos de nous</h2>
-				<p> </p>
-
-
-			</section>
-		</main>
-
-		<footer>
-			 <p>Contact : <a href="admissions-paris@ece.fr"> admissions-paris@ece.fr</a><br></p>
-			 <p>Téléphone : +33 01 44 39 06 00  <br>Adresse : 10, Rue Sextius Michel, 75015 Paris </p>
-			 <div id="map">
-            	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5250.732586425122!2d2.2885659!3d48.851225199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20-%20Ecole%20d&#39;ing%C3%A9nieurs%20-%20Campus%20de%20Paris!5e0!3m2!1sfr!2sfr!4v1733782099164!5m2!1sfr!2sfr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+        <section id="chat-area">
+            <h2 id="current-contact">Veuillez sélectionner un contact</h2>
+            <div id="chat-history">
+                <!-- Historique des messages pour le contact sélectionné -->
             </div>
-		</footer>	
-	</wrapper>
+            <form id="chat-form" style="display: none;">
+                <input type="text" id="chat-input" placeholder="Écrivez votre message..." required>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ECE - Tous droits réservés</p>
+    </footer>
+
+    <script src="messagerie.js"></script>
 </body>
 </html>
+
