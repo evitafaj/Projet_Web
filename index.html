@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECE In - Accueil</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <?php include('includes/header.php'); ?>
+<!-- Contenu de la page -->
+<?php include('includes/footer.php'); ?>
+
+    <header class="bg-primary text-white p-3">
+        <div class="container">
+            <h1>Bienvenue sur ECE In</h1>
+            <p>Connectez-vous à la communauté ECE et boostez votre carrière.</p>
+        </div>
+    </header>
+    <?php include('includes/header.php'); ?>
+    <main class="container mt-4">
+        <section class="row">
+            <div class="col-md-6">
+                <h2>Événement de la semaine</h2>
+                <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="event1.jpg" class="d-block w-100" alt="Événement 1">
+                            <div class="carousel-caption">
+                                <h5>Hackathon 2024</h5>
+                                <p>Rejoignez-nous pour le plus grand Hackathon étudiant de l'année.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="event2.jpg" class="d-block w-100" alt="Événement 2">
+                            <div class="carousel-caption">
+                                <h5>Conférence Entrepreneuriat</h5>
+                                <p>Découvrez les secrets des startups à succès.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>S'inscrire</h2>
+                    <form action="register.php" method="POST">
+                        <div class="mb-3">
+                            <label for="first_name" class="form-label">Prénom</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="last_name" class="form-label">Nom</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">S'inscrire</button>
+                    </form>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white p-3 text-center mt-4">
+        &copy; 2024 ECE In - Tous droits réservés.
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
