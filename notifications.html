@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notifications</title>
-    <link rel="stylesheet" href="projet.css">
+    <title>Votre Profil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     
-    <header>
-        <h1>Notifications</h1>
-        <p>Consultez les dernières actualités liées à l'école et à votre réseau.</p>
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1>ECE In</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="mon_reseau.html">Mon Réseau</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="profil.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="notifications.html">Notifications</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="messagerie.html">Messagerie</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="emplois.html">Emplois</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="login.html">Compte</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
+        <p>Consultez les dernières actualités liées à l'école et à votre réseau.</p>
         <section id="notifications-section">
             <h2>Vos Notifications</h2>
             <ul id="notifications-list">
@@ -22,8 +35,25 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 ECE - Tous droits réservés</p>
+    <footer class="bg-dark text-white text-center py-4">
+    <section class = "contact_id">
+                <p>Contact : <a href="admissions-paris@ece.fr"> admissions-paris@ece.fr</a><br></p>
+                <p>Téléphone : +33 01 44 39 06 00  <br></p>
+                <p>Adresse : 10, Rue Sextius Michel, 75015 Paris </p>
+                <div id="map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5250.732586425122!2d2.2885659!3d48.851225199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20-%20Ecole%20d&#39;ing%C3%A9nieurs%20-%20Campus%20de%20Paris!5e0!3m2!1sfr!2sfr!4v1733782099164!5m2!1sfr!2sfr" 
+                        width="400" 
+                        height="250" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>`
+                <p>&copy; 2024 ECE In - Tous droits réservés.</p>
+                </div>
+            </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </footer>
 
     <script src="notifications.js"></script>

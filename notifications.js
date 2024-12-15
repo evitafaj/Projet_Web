@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: "Réseau",
-            details: "Votre ami Thomas Edison a décroché une bourse d'excellence pour ses études en ingénierie.",
+            details: "Votre amie Evi Tafaj a décroché une bourse d'excellence pour ses études en ingénierie.",
         },
         {
             type: "Réseau",
-            details: "Henry Ford a été embauché chez McLaren en tant qu'ingénieur logiciel.",
+            details: "Malak El Idrissi a été embauché chez McLaren en tant qu'ingénieur logiciel.",
         }
     ];
 
